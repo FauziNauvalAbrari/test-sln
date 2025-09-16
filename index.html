@@ -287,6 +287,21 @@
         </div>
     </section>
 
+    <!-- Area Kerja Section -->
+    <section id="area-kerja" class="area-kerja">
+    <div class="container">
+        <div class="section-title">
+        <h2>Area Kerja</h2>
+        <p>Wilayah operasional layanan bongkar muat kami di Indonesia</p>
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container">
+        <div id="map"></div>
+        </div>
+    </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -418,6 +433,11 @@
             </div>
         </div>
     </footer>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const images = [
@@ -461,9 +481,36 @@
         
         preloadImages();
 
-        setInterval(changeBackgroundImage, 5000); // Ganti gambar setiap 5 detik
+        setInterval(changeBackgroundImage, 5000);
     });
     </script>
+    <script>
+    var map = L.map('map').setView([-2.5, 118], 5);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 20
+    }).addTo(map);
+
+    var pelabuhan = [
+      {nama: "Pelabuhan Tanjung Priok (Jakarta)", koordinat: [-6.1045, 106.8869]},
+      {nama: "Pelabuhan Tanjung Perak (Surabaya)", koordinat: [-7.2051, 112.7338]},
+      {nama: "Pelabuhan Belawan (Medan)", koordinat: [3.7876, 98.6937]},
+      {nama: "Pelabuhan Makassar", koordinat: [-5.1333, 119.4167]},
+      {nama: "Pelabuhan Balikpapan", koordinat: [-1.2675, 116.8289]},
+      {nama: "Pelabuhan Banjarmasin (Trisakti)", koordinat: [-3.3194, 114.5926]},
+      {nama: "Pelabuhan Ambon", koordinat: [-3.7008, 128.1833]},
+      {nama: "Pelabuhan Bitung (Sulawesi Utara)", koordinat: [1.4439, 125.1905]},
+      {nama: "Pelabuhan Jayapura", koordinat: [-2.5337, 140.7160]},
+      {nama: "Pelabuhan Sorong", koordinat: [-0.8761, 131.2558]}
+    ];
+
+    pelabuhan.forEach(function(pel) {
+      L.marker(pel.koordinat).addTo(map)
+        .bindPopup("<b>" + pel.nama + "</b>");
+    });
+  </script>
     <script src="js/script.js"></script>
     </body>
 </html>

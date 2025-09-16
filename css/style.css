@@ -236,7 +236,7 @@ header {
 
 .hero::before,
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -389,15 +389,53 @@ header {
   text-align: center;
   padding: 40px 30px;
   background: rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: var(--border-radius);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.facility-item > * {
+  position: relative;
+  z-index: 2;
+}
+
+.facility-item:nth-child(1) {
+  background-image: url("https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1cb3e131-1c4c-44ba-8df5-46cc2324c882.png");
+}
+
+.facility-item:nth-child(2) {
+  background-image: url("https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a8213015-38af-49ad-a435-ba2ac3f8ddec.png");
+}
+
+.facility-item:nth-child(3) {
+  background-image: url("https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b39b6017-e238-4908-95de-29041b7f8682.png");
+}
+
+.facility-item:nth-child(4) {
+  background-image: url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop");
 }
 
 .facility-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-15px);
+  color: white;
+  background-size: 110%;
+  transition: all 0.5s ease;
 }
 
 .facility-icon {
@@ -422,11 +460,13 @@ header {
   color: white;
   font-size: 1.3rem;
   margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .facility-item p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Advantages Section */
@@ -573,9 +613,18 @@ header {
   transform: scale(1.1);
 }
 
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+.area-kerja {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
 /* Contact Section */
 .contact {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: var(--white);
 }
 
 .contact-container {
@@ -807,12 +856,12 @@ footer::before {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-  .logo h1{
-	font-size: 18px;
+  .logo h1 {
+    font-size: 18px;
   }
 
-  .header-container{
-	height: 80px;
+  .header-container {
+    height: 80px;
   }
 
   .nav-links {
@@ -896,7 +945,7 @@ footer::before {
   }
 
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg)  translate(10px, -10px);
+    transform: rotate(-45deg) translate(10px, -10px);
   }
 
   .contact-info {
