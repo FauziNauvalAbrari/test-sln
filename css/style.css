@@ -176,7 +176,7 @@ header {
   text-decoration: none;
   color: var(--dark);
   font-weight: 500;
-  font-size: 17px;
+  font-size: 16px;
   transition: var(--transition);
   position: relative;
 }
@@ -245,7 +245,7 @@ header {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 2.0s ease-in-out;
 }
 
 .hero::before {
@@ -700,11 +700,12 @@ footer::before {
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* semua 4 kolom sama rata */
   gap: 40px;
   margin-bottom: 40px;
   position: relative;
   z-index: 2;
+  align-items: start;
 }
 
 .footer-col h3 {
