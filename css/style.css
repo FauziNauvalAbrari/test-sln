@@ -924,7 +924,7 @@ footer::before {
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
-    z-index: 1001; /* biar di atas nav-links */
+    z-index: 9999;
   }
 
   .hamburger span {
