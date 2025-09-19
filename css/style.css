@@ -150,7 +150,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 10px;
 }
 
 .logo {
@@ -168,8 +168,9 @@ header {
 
 .nav-links {
   display: flex;
+   align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -198,6 +199,25 @@ header {
 
 .nav-links a:hover {
   color: var(--primary);
+}
+
+/* Tombol login di navbar */
+.nav-links .btn-login {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ffa726, #fb8c00); /* orange gradient */
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links .btn-login:hover {
+  background: linear-gradient(135deg, #fb8c00, #ef6c00);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 .contact-info {
